@@ -15,7 +15,7 @@ Raspbian Buster Lite https://www.raspberrypi.org/downloads/raspbian/
 	sudo apt-get update
 	sudo apt-get upgrade
 Change Hostname
-4. Setup Host: sudo reaspi-config
+4. Setup Host: sudo raspi-config
 	Change Hostname
 	Expnad FileSystem
 	Change Memory Split 16 from 64
@@ -41,13 +41,13 @@ wpa_supplicant -iwlan0 -D wext -c/etc/wpa_supplicant/wpa_supplicant.conf -B
 
 8. Assign static IP: sudo nano /etc/dhcpcd.conf
 	interface eth0
-	#metric 203
-	static ip_address=192.168.1.201/24
+	metric 203
+	static ip_address=192.168.1.221/24
 	#static ip6_address=fe80::72fb:8884:2389:c076/64
 	static routers=192.168.1.1
 	static domain_name_servers=192.168.1.1 8.8.8.8 fd51:42f8:caae:d92e::1
 	interface wlan0
-	#metric 202
+	metric 202
 9. Check Internet access
 	a.  ip route
 	b. Temp Fix: sudo ip route del 0/0 dev eth0
@@ -59,5 +59,5 @@ wpa_supplicant -iwlan0 -D wext -c/etc/wpa_supplicant/wpa_supplicant.conf -B
 
 10. Add host to nodes: sudo nano /etc/hosts
 
-192.168.1.201 pi01 pi01.local pi01.lan
+192.168.1.201 pi01 pi01.local pi21.lan
 

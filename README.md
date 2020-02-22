@@ -49,7 +49,7 @@ wpa_supplicant -iwlan0 -D wext -c/etc/wpa_supplicant/wpa_supplicant.conf -B
 	interface wlan0
 	metric 202
 9. Check Internet access
-	a.  ip route
+	a. ip route
 	b. Temp Fix: sudo ip route del 0/0 dev eth0
 	c. Permanent Fix change rank of prefeed interface: sudo nano /etc/dhcpcd.conf
 		interface eth0
